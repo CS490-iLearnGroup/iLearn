@@ -22,7 +22,7 @@ RUN apt clean
 
 #Cloning git repo
 ARG MOODLE_GIT_URL=https://github.com/CS490-iLearnGroup/iLearn.git
-RUN git clone ${MOODLE_GIT_URL} /var/www/html/git
+RUN git clone -b lerkais ${MOODLE_GIT_URL} /var/www/html/git
 
 #opening perms for moodle
 RUN chmod a+wrx /var/www
@@ -41,4 +41,8 @@ RUN echo "DirectoryIndex /var/www/html/git/moodle/index.php" >> /var/www/html/.h
 #opening port for webserver
 EXPOSE 80
 
-CMD ["apache2ctl", "-D","FOREGROUND"]
+#Database Setup
+#RUN service mysql start
+#RUN `echo "CREATE DATABASE moodle DEFUALT CHARACTER SET utf8 COLLATE utf8_unicode_ci;CREATE USER moodleuser@localhost IDENTIFIED BY 'yourpassword';GRANT SELECT,INSERT,UPDATE,DELETE,CREATE,CREATE TEMPORARYTABLES,DROP,INDEX,ALTER ON moodle.* TO moodleuser@localhost;FLUSH PRIVILEGES;quit;"` | mysql -u root
+
+CMD /var/www/html/git/wrapper.sh
