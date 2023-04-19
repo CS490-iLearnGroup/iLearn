@@ -1,10 +1,10 @@
 #!/bin/bash
 
 # Start the first process
-apache2ctl -D FOREGROUND
+service mysql start
   
 # Start the second process
-service mysql start
+apache2ctl -D FOREGROUND
   
 # Wait for any process to exit
 wait -n
