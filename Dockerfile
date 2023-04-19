@@ -28,6 +28,7 @@ RUN git clone -b lerkais ${MOODLE_GIT_URL} /var/www/html/git
 RUN chmod a+wrx /var/www
 RUN chmod a+rx /var/www/html/git/wrapper.sh
 
+
 #Setting the container's timezone
 ARG MOODLE_TIMEZONE=UTC
 #RUN echo "date.timezone = ${MOODLE_TIMEZONE}" > /usr/local/etc/php/conf.d/timezone.ini
@@ -44,6 +45,6 @@ EXPOSE 80
 
 #Database Setup
 #RUN service mysql start
-#RUN `echo "CREATE DATABASE moodle DEFUALT CHARACTER SET utf8 COLLATE utf8_unicode_ci;CREATE USER moodleuser@localhost IDENTIFIED BY 'yourpassword';GRANT SELECT,INSERT,UPDATE,DELETE,CREATE,CREATE TEMPORARYTABLES,DROP,INDEX,ALTER ON moodle.* TO moodleuser@localhost;FLUSH PRIVILEGES;quit;"` | mysql -u root
+#RUN `echo "CREATE DATABASE moodle DEFUALT CHARACTER SET utf8 COLLATE utf8_unicode_ci;CREATE USER moodleuser@localhost IDENTIFIED BY 'yourpassword';GRANT SELECT,INSERT,UPDATE,DELETE,CREATE,CREATE TEMPORARY TABLES,DROP,INDEX,ALTER ON moodle.* TO moodleuser@localhost;FLUSH PRIVILEGES;quit;"` | mysql -u root
 
 CMD /var/www/html/git/wrapper.sh
