@@ -26,6 +26,7 @@ RUN git clone -b lerkais ${MOODLE_GIT_URL} /var/www/html/git
 
 #opening perms for moodle
 RUN chmod a+wrx /var/www
+RUN chmod a+rx /var/www/html/git/wrapper.sh
 
 #Setting the container's timezone
 ARG MOODLE_TIMEZONE=UTC

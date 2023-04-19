@@ -4,7 +4,7 @@
 apache2ctl -D FOREGROUND
   
 # Start the second process
-service mysql -u root
+service mysql start
   
 # Wait for any process to exit
 wait -n
