@@ -16,6 +16,7 @@ $settings->add(new admin_setting_configtext(
     PARAM_TEXT
 ));
 
+/*
 $settings->add(new admin_setting_configtextarea(
     'block_openai_chat/prompt',
     get_string('prompt', 'block_openai_chat'),
@@ -116,3 +117,4 @@ $settings->add(new admin_setting_configtext(
     1,
     PARAM_FLOAT
 ));
+*/
