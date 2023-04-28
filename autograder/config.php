@@ -3,7 +3,7 @@
 function ilearn_grader($essay){
 
 
-$openai_api_key = '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';
+$openai_api_key = 'API KEY HERE';
 
 // Set up the API endpoint
 $openai_endpoint = 'https://api.openai.com/v1/engines/text-davinci-003/completions';
