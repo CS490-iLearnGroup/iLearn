@@ -1,5 +1,6 @@
 <?php
 
+
 namespace block_recent_activity\task;
 
 defined('MOODLE_INTERNAL') || die();
