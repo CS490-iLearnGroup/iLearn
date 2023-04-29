@@ -37,3 +37,10 @@ Admin info:
 Username:admin
 <br>
 Password: Admin@admin1
+<br>
+Student login info:
+<br>
+Username:student
+<br>
+Password: Student123@
+
