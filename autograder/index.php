@@ -3,19 +3,24 @@
   <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
-    <title>Bootstrap demo</title>
+    <title>iLean autograder</title>
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-KK94CHFLLe+nY2dmCWGMq91rCGa5gtU4mk92HdvYe+M/SXH301p5ILy+dN9+nJOZ" crossorigin="anonymous">
   </head>
   <body style="background-color:powderblue;">
     <div class="container" style="margin-top:50px">
     <div class="row">
-        <div class="col-3"></div>
-        <div class="col-7">
+        <div class="col-lg-3"></div>
+        <div class="col-lg-7 col-sm-12">
         <?php
         include_once('config.php');
         if(isset($_POST['rate'])){
             $essay = $_POST['essay'];
-            ilearn_grader($essay);
+               if(strlen($_POST['essay']) < 50){
+                echo'<div class="alert alert-warning" role="alert">Essay should be 50 words or more.</div>';
+            }else{
+                ilearn_grader($essay);
+            }
+            
 
 
         } 
