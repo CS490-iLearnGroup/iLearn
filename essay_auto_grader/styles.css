@@ -1,0 +1,28 @@
+/* Add custom styles for the openai_essay_grader question type */
+
+/* Style the grading settings fields */
+#grading_settings_fieldset legend {
+    font-size: 1.2em;
+    font-weight: bold;
+    margin-bottom: 0.5em;
+}
+
+#max_score_field,
+#min_score_field,
+#target_score_field,
+#pass_fraction_field,
+#api_key_field {
+    margin-bottom: 1em;
+}
+
+#api_key_field label,
+#api_key_field input[type="text"] {
+    width: 100%;
+}
+
+/* Style the error message */
+#openai_error {
+    color: red;
+    font-weight: bold;
+    margin-bottom: 1em;
+}
